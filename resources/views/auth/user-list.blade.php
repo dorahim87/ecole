@@ -13,23 +13,28 @@
             Bonjour Etudiants!
         </p>
     </div>
-
 </div>
 <div class="row mt-3">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h2 class="display-5">Liste des Etudiants</h2>
+                <h2 class="display-5">Liste des etudiants </h2>
             </div>
             <div class="card-body">
+                @forelse($etudiants as $etudiant)
+                <h5>{{ $etudiant->name }}</h5>
                 <ul>
-                    @forelse($etudiants as $etudiant)
-                    <li> <!--<a href="{{route('etudiant.show', $etudiant->id)}}">{{ $etudiant->name }}</a>-->{{ $etudiant->name }} <a href="{{ route('article.index' )}}" class="btn ">Mes articles</a>
+                    @forelse($etudiant->articles as $article)
+                    <li>
+                        <a href="{{ route('user.articles', ['id' => $etudiant->id]) }}">Voir les articles</a>
                     </li>
                     @empty
-                    <li class="text-danger">Pas d'étudiant avec ce nom !</li>
+                    <li>Aucun article trouvé pour cet utilisateur.</li>
                     @endforelse
                 </ul>
+                @empty
+                <p>Aucun utilisateur trouvé.</p>
+                @endforelse
             </div>
             {{$etudiants}}
         </div>

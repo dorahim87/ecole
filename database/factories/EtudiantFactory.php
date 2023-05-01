@@ -18,7 +18,7 @@ class EtudiantFactory extends Factory
         $ville = Ville::inRandomOrder()->first(); // récupérer une ville au hasard
 
         return [
-            'nom' => $this->faker->lastName,
+            'name' => $this->faker->lastName,
             'adresse' => $this->faker->address,
             'phone' => $this->faker->phoneNumber,
             'email' => $this->faker->unique()->safeEmail,

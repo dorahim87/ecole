@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12 text-center pt-2">
                 <h1 class="display-5">
-                    Modifier un article
+                    Modifierun article
                 </h1>
             </div> <!--/col-12-->
         </div><!--/row-->
